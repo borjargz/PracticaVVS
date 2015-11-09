@@ -1,5 +1,8 @@
 package practicavvs.servidor;
 
+import contenido.Contenido;
+import token.Token;
+
 public interface Servidor {
 
 	public String obtenerNombre();
