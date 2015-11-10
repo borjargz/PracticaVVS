@@ -1,5 +1,6 @@
 package contenido;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Anuncio implements Contenido {
@@ -23,6 +24,7 @@ public class Anuncio implements Contenido {
 	{
 		this.titulo = "Publicidad";
 		this.duracion = 5;
+		listaReproduccion = new ArrayList<Contenido>();
 	}
 	
 	public String obtenerTitulo() {
@@ -34,6 +36,7 @@ public class Anuncio implements Contenido {
 	}
 
 	public List<Contenido> obtenerListaReproduccion() {
+		listaReproduccion.add(this);
 		return listaReproduccion;
 	}
 

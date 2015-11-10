@@ -41,6 +41,7 @@ public class Cancion implements Contenido {
 	}
 
 	public List<Contenido> obtenerListaReproduccion() {
+		listaReproduccion.add(this);
 		return listaReproduccion;
 	}
 

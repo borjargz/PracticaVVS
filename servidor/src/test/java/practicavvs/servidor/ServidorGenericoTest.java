@@ -13,27 +13,27 @@ public class ServidorGenericoTest extends TestCase {
 	}
 
 	public void testServidorGenerico() {
-		fail("Not yet implemented");
+		
 	}
 
 	public void testObtenerNombre() {
-		fail("Not yet implemented");
+		
 	}
 
 	public void testAlta() {
-		fail("Not yet implemented");
+		
 	}
 
 	public void testBaja() {
-		fail("Not yet implemented");
+		
 	}
 
 	public void testAgregar() {
-		fail("Not yet implemented");
+		
 	}
 
 	public void testEliminar() {
-		fail("Not yet implemented");
+		
 	}
 
 	public void testGetContenidos() {

@@ -1,10 +1,23 @@
 package contenido;
 
+import java.util.List;
+
 import junit.framework.TestCase;
 
 public class EmisoraTest extends TestCase {
 
+	private Contenido emisora;
+	private Contenido anuncio1;
+	private Contenido anuncio2;
+	private Contenido cancion1;
+	private Contenido cancion2;
+	
 	protected void setUp() throws Exception {
+		emisora = new Emisora("emisora1");
+		anuncio1 = new Anuncio();
+		anuncio2 = new Anuncio();
+		cancion1 = new Cancion("cancion1",1);
+		cancion2 = new Cancion("cancion2",2);
 		super.setUp();
 	}
 
@@ -13,27 +26,99 @@ public class EmisoraTest extends TestCase {
 	}
 
 	public void testObtenerTitulo() {
-		fail("Not yet implemented");
+		assertEquals("emisora1",emisora.obtenerTitulo());
 	}
 
 	public void testObtenerDuracion() {
-		fail("Not yet implemented");
+		assertEquals(0,emisora.obtenerDuracion());
 	}
 
 	public void testObtenerListaReproduccion() {
-		fail("Not yet implemented");
+		List<Contenido> lista = emisora.obtenerListaReproduccion();
+		assertEquals(0, lista.size());
+		
+		emisora.agregar(anuncio1, null);
+		lista = emisora.obtenerListaReproduccion();
+		assertEquals(1,lista.size());
+		assertEquals(anuncio1,lista.get(0));
+		
+		emisora.agregar(anuncio2, null);
+		lista = emisora.obtenerListaReproduccion();
+		assertEquals(2,lista.size());
+		assertEquals(anuncio2,lista.get(0));
+		assertEquals(anuncio1,lista.get(1));
+		
 	}
 
 	public void testBuscar() {
-		fail("Not yet implemented");
+		List<Contenido> lista = emisora.obtenerListaReproduccion();
+		assertEquals(0, lista.size());
+		
+		emisora.agregar(anuncio1, null);
+		lista = emisora.obtenerListaReproduccion();
+		assertEquals(1,lista.size());
+		assertEquals(anuncio1,lista.get(0));
+		
+		emisora.agregar(cancion1, null);
+		emisora.agregar(cancion2, null);
+		lista = emisora.obtenerListaReproduccion();
+		assertEquals(3,lista.size());
+		assertEquals(cancion2,lista.get(0));
+		assertEquals(cancion1,lista.get(1));
+		assertEquals(anuncio1,lista.get(2));
+		
+		lista = emisora.buscar("can");
+		assertEquals(2,lista.size());
+		assertEquals(cancion2,lista.get(0));
+		assertEquals(cancion1,lista.get(1));
+		
+		lista = emisora.buscar("pepe");
+		assertEquals(0,lista.size());
 	}
 
 	public void testAgregar() {
-		fail("Not yet implemented");
+		List<Contenido> lista = emisora.obtenerListaReproduccion();
+		assertEquals(0, lista.size());
+		
+		emisora.agregar(anuncio1, null);
+		lista = emisora.obtenerListaReproduccion();
+		assertEquals(1,lista.size());
+		assertEquals(anuncio1,lista.get(0));
+		
+		emisora.agregar(cancion1, null);
+		emisora.agregar(cancion2, null);
+		lista = emisora.obtenerListaReproduccion();
+		assertEquals(3,lista.size());
+		assertEquals(cancion2,lista.get(0));
+		assertEquals(cancion1,lista.get(1));
+		assertEquals(anuncio1,lista.get(2));
 	}
 
 	public void testEliminar() {
-		fail("Not yet implemented");
+		List<Contenido> lista = emisora.obtenerListaReproduccion();
+		assertEquals(0, lista.size());
+		
+		emisora.agregar(anuncio1, null);
+		lista = emisora.obtenerListaReproduccion();
+		assertEquals(1,lista.size());
+		assertEquals(anuncio1,lista.get(0));
+		
+		emisora.agregar(cancion1, null);
+		emisora.agregar(cancion2, null);
+		lista = emisora.obtenerListaReproduccion();
+		assertEquals(3,lista.size());
+		assertEquals(cancion2,lista.get(0));
+		assertEquals(cancion1,lista.get(1));
+		assertEquals(anuncio1,lista.get(2));
+		
+		
+		emisora.eliminar(anuncio1);
+		lista = emisora.obtenerListaReproduccion();
+		assertEquals(2,lista.size());
+		assertEquals(cancion2,lista.get(0));
+		assertEquals(cancion1,lista.get(1));
+		
+		
 	}
 
 }

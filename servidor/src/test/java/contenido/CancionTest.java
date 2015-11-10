@@ -1,10 +1,17 @@
 package contenido;
 
+import java.util.List;
+
 import junit.framework.TestCase;
 
 public class CancionTest extends TestCase {
 
+	private Contenido cancion;
+	private Contenido cancion2;
+	
 	protected void setUp() throws Exception {
+		cancion = new Cancion("cancion1", 3);
+		cancion2 = new Cancion("cancion2",4);
 		super.setUp();
 	}
 
@@ -13,27 +20,36 @@ public class CancionTest extends TestCase {
 	}
 
 	public void testObtenerTitulo() {
-		fail("Not yet implemented");
+		assertEquals("cancion1",cancion.obtenerTitulo());
+		assertEquals("cancion2",cancion2.obtenerTitulo());
 	}
 
 	public void testObtenerDuracion() {
-		fail("Not yet implemented");
+		assertEquals(3,cancion.obtenerDuracion());
+		assertEquals(4,cancion2.obtenerDuracion());
 	}
 
 	public void testObtenerListaReproduccion() {
-		fail("Not yet implemented");
+		List<Contenido> lista = cancion.obtenerListaReproduccion();
+		assertEquals(lista.size(), 1);
+		for (int i = 0; i < lista.size(); i++) {
+			assertEquals(lista.get(i), cancion);
+		}
 	}
 
 	public void testBuscar() {
-		fail("Not yet implemented");
+		List<Contenido> lista = cancion.buscar("PUBLICIDAD");
+		assertEquals(0, lista.size());
+		lista = cancion.buscar("pepe");
+		assertEquals(0, lista.size());
+		lista = cancion.buscar("can");
+		assertEquals(1, lista.size());
+		assertEquals(cancion,lista.get(0));
+		
+		lista = cancion2.buscar("can");
+		assertEquals(1, lista.size());
+		assertEquals(cancion2,lista.get(0));
 	}
 
-	public void testAgregar() {
-		fail("Not yet implemented");
-	}
-
-	public void testEliminar() {
-		fail("Not yet implemented");
-	}
 
 }

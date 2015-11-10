@@ -1,10 +1,15 @@
 package contenido;
 
+import java.util.List;
+
 import junit.framework.TestCase;
 
 public class AnuncioTest extends TestCase {
 
+	private Contenido anuncio;
+	
 	protected void setUp() throws Exception {
+		anuncio = new Anuncio();
 		super.setUp();
 	}
 
@@ -13,31 +18,35 @@ public class AnuncioTest extends TestCase {
 	}
 
 	public void testAnuncio() {
-		fail("Not yet implemented");
+		
 	}
 
 	public void testObtenerTitulo() {
-		fail("Not yet implemented");
+		assertTrue(anuncio.obtenerTitulo().equalsIgnoreCase("Publicidad"));
+		assertEquals("Publicidad", anuncio.obtenerTitulo());
 	}
 
 	public void testObtenerDuracion() {
-		fail("Not yet implemented");
+		assertEquals(5, anuncio.obtenerDuracion());
 	}
 
 	public void testObtenerListaReproduccion() {
-		fail("Not yet implemented");
+		List<Contenido> lista = anuncio.obtenerListaReproduccion();
+		assertEquals(lista.size(), 1);
+		for (int i = 0; i < lista.size(); i++) {
+			assertEquals(lista.get(i), anuncio);
+		}
 	}
 
 	public void testBuscar() {
-		fail("Not yet implemented");
-	}
-
-	public void testAgregar() {
-		fail("Not yet implemented");
-	}
-
-	public void testEliminar() {
-		fail("Not yet implemented");
+		List<Contenido> lista = anuncio.buscar("PUBLICIDAD");
+		assertEquals(0, lista.size());
+		lista = anuncio.buscar("pepe");
+		assertEquals(0, lista.size());
+		lista = anuncio.buscar("Publicidad");
+		assertEquals(1, lista.size());
+		assertEquals(anuncio,lista.get(0));
+		
 	}
 
 }
