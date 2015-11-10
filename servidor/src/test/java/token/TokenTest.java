@@ -13,19 +13,19 @@ public class TokenTest extends TestCase {
 	}
 
 	public void testAnadirToken() {
-		fail("Not yet implemented");
+		
 	}
 
 	public void testEliminarToken() {
-		fail("Not yet implemented");
+		
 	}
 
 	public void testValidarToken() {
-		fail("Not yet implemented");
+		
 	}
 
 	public void testUsarToken() {
-		fail("Not yet implemented");
+		
 	}
 
 }

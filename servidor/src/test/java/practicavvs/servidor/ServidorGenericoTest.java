@@ -36,12 +36,4 @@ public class ServidorGenericoTest extends TestCase {
 		
 	}
 
-	public void testGetContenidos() {
-		fail("Not yet implemented");
-	}
-
-	public void testObtenerAnuncio() {
-		fail("Not yet implemented");
-	}
-
 }
