@@ -46,6 +46,7 @@ public interface Servidor {
 	 * @param buscar Cadena de texto a buscar en el servidor.
 	 * @param tk token empleado para la busqueda.
 	 * @return Devuelve una lista de elementos que coinciden con la busqueda.
+	 * @throws TokenNotFoundException Si el token empleado no es encontrado.
 	 */
 	public List<Contenido> Buscar(String buscar,String tk);
 }

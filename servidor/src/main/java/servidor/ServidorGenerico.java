@@ -3,6 +3,7 @@ package servidor;
 import java.util.ArrayList;
 import java.util.List;
 
+import contenido.Anuncio;
 import contenido.Contenido;
 import token.Token;
 import utils.DuplicatedContentException;
@@ -60,45 +61,43 @@ public abstract class ServidorGenerico implements Servidor{
 	
 	public List<Contenido> Buscar(String buscar,String tk){
 		List<Contenido> resultado = new ArrayList<Contenido>();
-		/*List<Contenido> tmp = new ArrayList<Contenido>();
-		List<Contenido> tmp2 = new ArrayList<Contenido>();
-		for (Contenido c : this.contenidos) {
-			tmp = c.buscar(buscar);
-			if (tmp.size() != 0)
-				tmp2.addAll(tmp);
-		}
-		if (this.getTokens().containsKey(token)
-				&& (this.getTokens().get(token).intValue() > 0)) {
-			int restantes = this.getTokens().get(token).intValue();
-			tmp.clear();
-			if(restantes == 0)
-				throw new SearchLimitReachedException(token);
-			for(int j = 0; j<tmp2.size();j++){
-				tmp.add(tmp2.get(j));
-				restantes--;
-				if(restantes == 0)
-					break;
-			}
-			resultado = tmp;
-			if (restantes > 0) {
-				this.baja(token);
-				this.getTokens().put(token, restantes);
-			} else
-				this.baja(token);
-		} else {
+		/**
+		 * Si se emplea un token vacio en las busquedas,
+		 * se comienza con un anuncio y cada tres contenidos se reproduce
+		 * otro anuncio.
+		 */
+		if(tk == "")
+		{
 			resultado.add(new Anuncio());
-			// meter publi
-			int count = 0;
-			for (int i = 1; i < tmp2.size(); i++) {
-				if (count == 3) {
-					resultado.add(new Anuncio());
-					count = 0;
+		}
+		else
+		{
+			/**
+			 * Si puedes emplear el token, devuelves el resultado de la busqueda.
+			 */
+			try{
+				Token.usarToken(tk);
+				for(Contenido c: contenidos){
+					resultado.addAll(c.buscar(buscar));
 				}
-				resultado.add(tmp2.get(i-1));
-				
-				count++;
 			}
-		}*/
+			/**
+			 * Si el token no se encuentra por haber llegado al limite de usos, se inserta publi.
+			 */
+			catch(TokenNotFoundException e){
+				int i = 0;
+				int contador=0;
+				while (i<contenidos.size()){
+					contador++;
+					if(contador == 3){
+						resultado.add(i,new Anuncio());
+						contador = 0;
+					}
+					i++;
+				}
+			}
+		}
+		
 		return resultado;
 	}
 }

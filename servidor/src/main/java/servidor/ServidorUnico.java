@@ -10,7 +10,7 @@ public class ServidorUnico extends ServidorGenerico{
 		super(nombre,adminToken);
 	}
 
-	public List<Contenido> Buscar(String buscar, String tk) {
+	public List<Contenido> Buscar(String buscar, String tk){
 		return super.Buscar(buscar, tk);
 	}
 

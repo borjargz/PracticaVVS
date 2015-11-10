@@ -73,12 +73,23 @@ public class Emisora implements Contenido{
 			else
 			{
 				int posicionpredecesor = listaReproduccion.indexOf(predecesor);
-				int i = posicionpredecesor;
-				listaAux = listaReproduccion;
+				int i = 0;
 				while(i < listaReproduccion.size()){
-					listaAux.add(i+1, listaReproduccion.get(i));
+					if(i<posicionpredecesor)
+						listaAux.add(i, listaReproduccion.get(i));
+					else
+					{
+						if(i == posicionpredecesor)
+							listaAux.add(contenido);
+						else
+						{
+							listaAux.addAll(posicionpredecesor+1,
+									listaReproduccion.subList(posicionpredecesor, listaReproduccion.size()));
+							break;
+						}
+					}
+					i++;
 				}
-				listaAux.add(posicionpredecesor, contenido);
 				listaReproduccion = listaAux;
 			}
 		}

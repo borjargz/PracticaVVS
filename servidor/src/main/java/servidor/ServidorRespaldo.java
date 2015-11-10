@@ -17,7 +17,7 @@ public class ServidorRespaldo extends ServidorGenerico {
 		this.servidorRespaldo = res;
 	}
 
-	public List<Contenido> Buscar(String buscar, String tk) {
+	public List<Contenido> Buscar(String buscar, String tk){
 		List<Contenido> resultado = super.Buscar(buscar, tk);
 		if (resultado.isEmpty())
 			return servidorRespaldo.Buscar(buscar, tk);
