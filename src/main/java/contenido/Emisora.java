@@ -15,7 +15,10 @@ public class Emisora extends ContenidoGenerico{
 		listaReproduccion = new ArrayList<Contenido>();
 	}
 	
-
+	@Override
+	public List<Contenido> obtenerListaReproduccion(){
+		return listaReproduccion;
+	}
 
 	public List<Contenido> buscar(String subcadena) {
 		List<Contenido> lista = new ArrayList<Contenido>();
@@ -70,7 +73,7 @@ public class Emisora extends ContenidoGenerico{
 
 	public void eliminar(Contenido contenido) {
 		if (listaReproduccion.contains(contenido)) {
-			this.duracion -= contenido.obtenerDuracion();
+			//this.duracion -= contenido.obtenerDuracion();
 			listaReproduccion.remove(contenido);
 		}
 	}
