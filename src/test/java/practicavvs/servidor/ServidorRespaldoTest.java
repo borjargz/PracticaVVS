@@ -16,22 +16,6 @@ public class ServidorRespaldoTest extends TestCase {
 		
 	}
 
-	public void testServidorRespaldoStringListOfContenidoListOfContenido() {
-		
-	}
-
-	public void testServidorRespaldoStringListOfContenidoListOfContenidoServidor() {
-		
-	}
-
-	public void testServidorUnico() {
-		
-	}
-
-	public void testServidorGenerico() {
-		
-	}
-
 	public void testObtenerNombre() {
 		
 	}
@@ -52,12 +36,5 @@ public class ServidorRespaldoTest extends TestCase {
 		
 	}
 
-	public void testGetContenidos() {
-		
-	}
-
-	public void testObtenerAnuncio() {
-		
-	}
 
 }
