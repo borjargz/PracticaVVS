@@ -31,6 +31,7 @@ public abstract class ServidorGenerico implements Servidor{
 	public ServidorGenerico(String nombre,String adminToken) {
 		super();
 		this.nombre = nombre;
+		this.adminToken = adminToken;
 	}
 	
 	
@@ -70,7 +71,7 @@ public abstract class ServidorGenerico implements Servidor{
 		 */
 		if(tk == "")
 		{
-			resultado.add(new Anuncio());
+			resultado = addPublicidad();
 		}
 		else
 		{
@@ -87,19 +88,25 @@ public abstract class ServidorGenerico implements Servidor{
 			 * Si el token no se encuentra por haber llegado al limite de usos, se inserta publi.
 			 */
 			catch(TokenNotFoundException e){
-				int i = 0;
-				int contador=0;
-				while (i<contenidos.size()){
-					contador++;
-					if(contador == 3){
-						resultado.add(i,new Anuncio());
-						contador = 0;
-					}
-					i++;
-				}
+				resultado = addPublicidad();
 			}
 		}
 		
+		return resultado;
+	}
+	
+	private List<Contenido> addPublicidad(){
+		List<Contenido> resultado = new ArrayList<Contenido>();
+		int i = 0;
+		int contador=0;
+		while (i<contenidos.size()){
+			contador++;
+			if(contador == 3){
+				resultado.add(i,new Anuncio());
+				contador = 0;
+			}
+			i++;
+		}
 		return resultado;
 	}
 }
