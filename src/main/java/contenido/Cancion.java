@@ -3,23 +3,8 @@ package contenido;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cancion implements Contenido {
-	/**
-	 * Atributo que almacena el titulo de la cancion.
-	 */
-	private String titulo;
-	/**
-	 * Atributo que almacena la duracion de la cancion.
-	 */
-	private int duracion;
-	/**
-	 * Lista que almacena la lista de reproduccion.
-	 */
-	private List<Contenido> listaReproduccion;
-	
-	public Cancion(){
-		
-	}
+public class Cancion extends ContenidoGenerico {
+
 	/**
 	 * Constructor con el que se inicializa la cancion.
 	 * @param titulo Titulo de la cancion.
@@ -32,18 +17,7 @@ public class Cancion implements Contenido {
 	}
 
 	
-	public String obtenerTitulo() {
-		return titulo;
-	}
-
-	public int obtenerDuracion() {
-		return duracion;
-	}
-
-	public List<Contenido> obtenerListaReproduccion() {
-		listaReproduccion.add(this);
-		return listaReproduccion;
-	}
+	
 
 	public List<Contenido> buscar(String subcadena) {
 		if (titulo.contains(subcadena)){

@@ -3,25 +3,8 @@ package contenido;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Emisora implements Contenido{
+public class Emisora extends ContenidoGenerico{
 
-	/**
-	 * Atributo que almacena el titulo de la emisora.
-	 */
-	private String titulo;
-	/**
-	 * Atributo que almacena la duración de la emisora.
-	 */
-	private int duracion;
-	/**
-	 * Lista que almacena los elementos a reproducir en la emisora.
-	 */
-	private List<Contenido> listaReproduccion;
-	
-	public Emisora(){
-		
-	}
-	
 	/**
 	 * Constructor para crear una nueva emisora.
 	 * @param titulo Titulo que tiene la emisora nueva.
@@ -32,17 +15,7 @@ public class Emisora implements Contenido{
 		listaReproduccion = new ArrayList<Contenido>();
 	}
 	
-	public String obtenerTitulo() {
-		return titulo;
-	}
 
-	public int obtenerDuracion() {
-		return duracion;
-	}
-
-	public List<Contenido> obtenerListaReproduccion() {
-		return listaReproduccion;
-	}
 
 	public List<Contenido> buscar(String subcadena) {
 		List<Contenido> lista = new ArrayList<Contenido>();

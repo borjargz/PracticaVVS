@@ -3,19 +3,8 @@ package contenido;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Anuncio implements Contenido {
-	/**
-	 * Atributo que almacena el titulo del anuncio.
-	 */
-	private String titulo;
-	/**
-	 * Atributo que almacena la duración del anuncio.
-	 */
-	private int duracion;
-	/**
-	 * Lista generica que almacena el contenido a reproducir en el servidor.
-	 */
-	private List<Contenido> listaReproduccion;
+public class Anuncio extends ContenidoGenerico {
+	
 	/**
 	 * Constructor de la clase, en la que se inicializan los atributos.
 	 * En el caso de un anuncio, el titulo será 'Publicidad' y la duracion 5.
@@ -27,18 +16,6 @@ public class Anuncio implements Contenido {
 		listaReproduccion = new ArrayList<Contenido>();
 	}
 	
-	public String obtenerTitulo() {
-		return this.titulo;
-	}
-
-	public int obtenerDuracion() {
-		return this.duracion;
-	}
-
-	public List<Contenido> obtenerListaReproduccion() {
-		listaReproduccion.add(this);
-		return listaReproduccion;
-	}
 
 	public List<Contenido> buscar(String subcadena) {
 		if (titulo.contains(subcadena)){
@@ -47,10 +24,14 @@ public class Anuncio implements Contenido {
 		return listaReproduccion;
 	}
 
+
+	@Override
 	public void agregar(Contenido contenido, Contenido predecesor) {
 		
 	}
 
+
+	@Override
 	public void eliminar(Contenido contenido) {
 		
 	}
