@@ -28,7 +28,7 @@ public interface Contenido {
 	 * @return Devuelve una lista de contenido con los elementos que coincidan
 	 * con la subcadena buscada.
 	 */
-	public List<Contenido> buscar(String subcadena);
+	public List<Contenido> Buscar(String subcadena);
 	
 
 	/**
@@ -38,11 +38,11 @@ public interface Contenido {
 	 * @param contenido Elemento a agregar.
 	 * @param predecesor Elemento previo existente en la lista.
 	 */
-	public void agregar(Contenido contenido, Contenido predecesor);
+	public void Agregar(Contenido contenido, Contenido predecesor);
 	
 	/**
 	 * Metodo que elimina contenido de una lista.
 	 * @param contenido Elemento a eliminar de la lista.
 	 */
-	public void eliminar(Contenido contenido);
+	public void Eliminar(Contenido contenido);
 }

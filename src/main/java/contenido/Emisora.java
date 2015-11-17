@@ -20,7 +20,7 @@ public class Emisora extends ContenidoGenerico{
 		return listaReproduccion;
 	}
 
-	public List<Contenido> buscar(String subcadena) {
+	public List<Contenido> Buscar(String subcadena) {
 		List<Contenido> lista = new ArrayList<Contenido>();
 		for (int i = 0; i < listaReproduccion.size(); i++) {
 			if (listaReproduccion.get(i).obtenerTitulo().toLowerCase().
@@ -31,7 +31,7 @@ public class Emisora extends ContenidoGenerico{
 		return lista;
 	}
 	
-	public void agregar(Contenido contenido, Contenido predecesor) {
+	public void Agregar(Contenido contenido, Contenido predecesor) {
 		if (predecesor == null) {
 			if (listaReproduccion.isEmpty()) {
 				listaReproduccion.add(contenido);
@@ -71,7 +71,7 @@ public class Emisora extends ContenidoGenerico{
 		}
 	}
 
-	public void eliminar(Contenido contenido) {
+	public void Eliminar(Contenido contenido) {
 		if (listaReproduccion.contains(contenido)) {
 			//this.duracion -= contenido.obtenerDuracion();
 			listaReproduccion.remove(contenido);

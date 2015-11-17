@@ -39,11 +39,11 @@ public class AnuncioTest extends TestCase {
 	}
 
 	public void testBuscar() {
-		List<Contenido> lista = anuncio.buscar("PUBLICIDAD");
+		List<Contenido> lista = anuncio.Buscar("PUBLICIDAD");
 		assertEquals(0, lista.size());
-		lista = anuncio.buscar("pepe");
+		lista = anuncio.Buscar("pepe");
 		assertEquals(0, lista.size());
-		lista = anuncio.buscar("Publicidad");
+		lista = anuncio.Buscar("Publicidad");
 		assertEquals(1, lista.size());
 		assertEquals(anuncio,lista.get(0));
 		

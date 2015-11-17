@@ -38,15 +38,15 @@ public class CancionTest extends TestCase {
 	}
 
 	public void testBuscar() {
-		List<Contenido> lista = cancion.buscar("PUBLICIDAD");
+		List<Contenido> lista = cancion.Buscar("PUBLICIDAD");
 		assertEquals(0, lista.size());
-		lista = cancion.buscar("pepe");
+		lista = cancion.Buscar("pepe");
 		assertEquals(0, lista.size());
-		lista = cancion.buscar("can");
+		lista = cancion.Buscar("can");
 		assertEquals(1, lista.size());
 		assertEquals(cancion,lista.get(0));
 		
-		lista = cancion2.buscar("can");
+		lista = cancion2.Buscar("can");
 		assertEquals(1, lista.size());
 		assertEquals(cancion2,lista.get(0));
 	}

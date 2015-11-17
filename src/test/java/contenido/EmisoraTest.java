@@ -37,13 +37,13 @@ public class EmisoraTest extends TestCase {
 		List<Contenido> lista = emisora.obtenerListaReproduccion();
 		assertEquals(0, lista.size());
 		
-		emisora.agregar(anuncio1, null);
+		emisora.Agregar(anuncio1, null);
 		lista = emisora.obtenerListaReproduccion();
 		assertEquals(1,lista.size());
 		assertEquals(anuncio1,lista.get(0));
 		assertEquals(5,emisora.obtenerDuracion());
 		
-		emisora.agregar(anuncio2, null);
+		emisora.Agregar(anuncio2, null);
 		lista = emisora.obtenerListaReproduccion();
 		assertEquals(2,lista.size());
 		assertEquals(anuncio2,lista.get(0));
@@ -55,14 +55,14 @@ public class EmisoraTest extends TestCase {
 		List<Contenido> lista = emisora.obtenerListaReproduccion();
 		assertEquals(0, lista.size());
 		
-		emisora.agregar(anuncio1, null);
+		emisora.Agregar(anuncio1, null);
 		lista = emisora.obtenerListaReproduccion();
 		assertEquals(1,lista.size());
 		assertEquals(anuncio1,lista.get(0));
 		assertEquals(5,emisora.obtenerDuracion());
 		
-		emisora.agregar(cancion1, null);
-		emisora.agregar(cancion2, null);
+		emisora.Agregar(cancion1, null);
+		emisora.Agregar(cancion2, null);
 		lista = emisora.obtenerListaReproduccion();
 		assertEquals(3,lista.size());
 		assertEquals(cancion2,lista.get(0));
@@ -70,13 +70,13 @@ public class EmisoraTest extends TestCase {
 		assertEquals(anuncio1,lista.get(2));
 		assertEquals(8,emisora.obtenerDuracion());
 		
-		lista = emisora.buscar("can");
+		lista = emisora.Buscar("can");
 		assertEquals(2,lista.size());
 		assertEquals(cancion2,lista.get(0));
 		assertEquals(cancion1,lista.get(1));
 		
 		
-		lista = emisora.buscar("pepe");
+		lista = emisora.Buscar("pepe");
 		assertEquals(0,lista.size());
 	}
 
@@ -84,13 +84,13 @@ public class EmisoraTest extends TestCase {
 		List<Contenido> lista = emisora.obtenerListaReproduccion();
 		assertEquals(0, lista.size());
 		
-		emisora.agregar(anuncio1, null);
+		emisora.Agregar(anuncio1, null);
 		lista = emisora.obtenerListaReproduccion();
 		assertEquals(1,lista.size());
 		assertEquals(anuncio1,lista.get(0));
 		
-		emisora.agregar(cancion1, null);
-		emisora.agregar(cancion2, null);
+		emisora.Agregar(cancion1, null);
+		emisora.Agregar(cancion2, null);
 		lista = emisora.obtenerListaReproduccion();
 		assertEquals(3,lista.size());
 		assertEquals(cancion2,lista.get(0));
@@ -102,20 +102,20 @@ public class EmisoraTest extends TestCase {
 		List<Contenido> lista = emisora.obtenerListaReproduccion();
 		assertEquals(0, lista.size());
 		
-		emisora.agregar(anuncio1, null);
+		emisora.Agregar(anuncio1, null);
 		lista = emisora.obtenerListaReproduccion();
 		assertEquals(1,lista.size());
 		assertEquals(anuncio1,lista.get(0));
 		
-		emisora.agregar(cancion1, null);
-		emisora.agregar(cancion2, null);
+		emisora.Agregar(cancion1, null);
+		emisora.Agregar(cancion2, null);
 		lista = emisora.obtenerListaReproduccion();
 		assertEquals(3,lista.size());
 		assertEquals(cancion2,lista.get(0));
 		assertEquals(cancion1,lista.get(1));
 		assertEquals(anuncio1,lista.get(2));
 		
-		emisora.agregar(anuncio2, cancion1);
+		emisora.Agregar(anuncio2, cancion1);
 		lista = emisora.obtenerListaReproduccion();
 		assertEquals(4,lista.size());
 		assertEquals(cancion2,lista.get(0));
@@ -124,7 +124,7 @@ public class EmisoraTest extends TestCase {
 		assertEquals(anuncio1,lista.get(3));
 		
 		
-		emisora.eliminar(anuncio1);
+		emisora.Eliminar(anuncio1);
 		lista = emisora.obtenerListaReproduccion();
 		assertEquals(3,lista.size());
 		assertEquals(cancion2,lista.get(0));

@@ -19,18 +19,18 @@ public class Cancion extends ContenidoGenerico {
 	
 	
 
-	public List<Contenido> buscar(String subcadena) {
+	public List<Contenido> Buscar(String subcadena) {
 		if (titulo.contains(subcadena)){
 			listaReproduccion.add(this);
 		}
 		return listaReproduccion;
 	}
 
-	public void agregar(Contenido contenido, Contenido predecesor) {
+	public void Agregar(Contenido contenido, Contenido predecesor) {
 		
 	}
 
-	public void eliminar(Contenido contenido) {
+	public void Eliminar(Contenido contenido) {
 		
 	}
 

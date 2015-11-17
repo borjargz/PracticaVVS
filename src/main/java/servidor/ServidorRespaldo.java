@@ -8,10 +8,6 @@ public class ServidorRespaldo extends ServidorGenerico {
 
 	private ServidorGenerico servidorRespaldo;
 	
-	public ServidorRespaldo(String nombre,String adminToken) {
-		super(nombre, adminToken);
-	}
-	
 	public ServidorRespaldo(String nombre,String adminToken,ServidorGenerico res) {
 		super(nombre,adminToken);
 		this.servidorRespaldo = res;

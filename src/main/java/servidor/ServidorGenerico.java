@@ -78,7 +78,7 @@ public abstract class ServidorGenerico implements Servidor{
 			try{
 				Token.usarToken(tk);
 				for(Contenido c: contenidos){
-					resultado.addAll(c.buscar(buscar));
+					resultado.addAll(c.Buscar(buscar));
 				}
 			}
 			/**

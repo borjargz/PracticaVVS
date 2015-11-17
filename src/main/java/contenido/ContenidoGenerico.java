@@ -32,9 +32,9 @@ public abstract class ContenidoGenerico implements Contenido {
 	}
 	
 
-	public abstract List<Contenido> buscar(String subcadena);
+	public abstract List<Contenido> Buscar(String subcadena);
 	
-	public abstract void agregar(Contenido contenido, Contenido predecesor);
+	public abstract void Agregar(Contenido contenido, Contenido predecesor);
 	
-	public abstract void eliminar(Contenido contenido);
+	public abstract void Eliminar(Contenido contenido);
 }
