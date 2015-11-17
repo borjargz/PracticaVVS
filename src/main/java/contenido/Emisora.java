@@ -70,6 +70,7 @@ public class Emisora extends ContenidoGenerico{
 
 	public void eliminar(Contenido contenido) {
 		if (listaReproduccion.contains(contenido)) {
+			this.duracion -= contenido.obtenerDuracion();
 			listaReproduccion.remove(contenido);
 		}
 	}
