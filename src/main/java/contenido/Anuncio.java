@@ -18,7 +18,7 @@ public class Anuncio extends ContenidoGenerico {
 	
 
 	public List<Contenido> Buscar(String subcadena) {
-		if (titulo.contains(subcadena)){
+		if (titulo.contains(subcadena)&&!listaReproduccion.contains(this)){
 			listaReproduccion.add(this);
 		}
 		return listaReproduccion;
