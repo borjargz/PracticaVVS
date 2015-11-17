@@ -48,10 +48,12 @@ public abstract class ServidorGenerico implements Servidor{
 	}
 	
 	public void Agregar(Contenido c, String tk) throws DuplicatedContentException, TokenNotFoundException{
-		if (contenidos.contains(c))
-			throw new DuplicatedContentException(c);
-		if(tk.equalsIgnoreCase(adminToken))
-			contenidos.add(c);
+		if(tk.equalsIgnoreCase(adminToken)){
+			if(contenidos.contains(c))
+				throw new DuplicatedContentException(c);
+			else
+				contenidos.add(c);
+		}
 	}
 	
 	public void Eliminar(Contenido c,String tk) throws TokenNotFoundException{
