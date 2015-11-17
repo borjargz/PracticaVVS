@@ -16,9 +16,6 @@ public class Cancion extends ContenidoGenerico {
 		listaReproduccion = new ArrayList<Contenido>();
 	}
 
-	
-	
-
 	public List<Contenido> Buscar(String subcadena) {
 		if (titulo.contains(subcadena)&&!listaReproduccion.contains(this)){
 			listaReproduccion.add(this);

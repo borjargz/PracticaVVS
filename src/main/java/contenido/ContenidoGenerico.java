@@ -27,7 +27,8 @@ public abstract class ContenidoGenerico implements Contenido {
 	
 
 	public List<Contenido> obtenerListaReproduccion(){
-		listaReproduccion.add(this);
+		if(!listaReproduccion.contains(this))
+			listaReproduccion.add(this);
 		return listaReproduccion;
 	}
 	
