@@ -2,8 +2,6 @@ package practicavvs.servidor;
 
 import java.util.List;
 
-import org.junit.Test;
-
 import contenido.Anuncio;
 import contenido.Cancion;
 import contenido.Contenido;
@@ -123,7 +121,7 @@ public class ServidorUnicoTest extends TestCase {
 
 	}
 
-	@Test(expected=DuplicatedContentException.class)
+	//@Test(expected=DuplicatedContentException.class)
 	public void testElementoAnadido() throws DuplicatedContentException, TokenNotFoundException {
 		/**
 		 * Añadir un elemento previamente añadido.
